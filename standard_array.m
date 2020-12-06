@@ -12,6 +12,12 @@ for i = 1:n1
     sac_1(i, :, :) = galois2_add(c1, I(i, :));
 end
 
+trunc_sac_1 = sac_1(:, 1, :);
+
+fprintf('Size of correctable standard array 1: %d\n', numel(sac_1)/n1);
+fprintf('Size of truncated correctable standard array 1: %d\n', ...
+    numel(trunc_sac_1)/n1);
+
 %% code 2
 corr2 = 2;
 k2 = 4;
@@ -36,3 +42,9 @@ for i = 2:n2
         counter = counter + 1;
     end
 end
+
+trunc_sac_2 = sac_2(:, 1, :);
+
+fprintf('Size of correctable standard array 2: %d\n', numel(sac_2)/n2);
+fprintf('Size of truncated correctable standard array 2: %d\n', ...
+    numel(trunc_sac_2)/n2);
