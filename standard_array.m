@@ -21,8 +21,9 @@ for i = 1:n1
 end
 
 % create 
-errors1 = reshape(sac_1(:, 1, :), [], n1);
-S1 = galois2_multiply(errors1, parity_check(G1).');
+E1 = reshape(sac_1(:, 1, :), [], n1);
+S1 = galois2_multiply(E1, parity_check(G1).');
+SE_map1 = containers.Map(bi2de(S1), bi2de(E1));
 
 %% code 2
 corr2 = 2;
@@ -51,8 +52,9 @@ for i = 2:n2
     end
 end
 
-errors2 = reshape(sac_2(:, 1, :), [], n2);
-S2 = galois2_multiply(errors2, parity_check(G2).');
+E2 = reshape(sac_2(:, 1, :), [], n2);
+S2 = galois2_multiply(E2, parity_check(G2).');
+SE_map2 = containers.Map(bi2de(S2), bi2de(E2));
 
 %% save to .mat file
-save('syndrome.mat', 'S1', 'S2');
+save('syndrome.mat', 'E1', 'S1', 'SE_map1', 'E2', 'S2', 'SE_map2');
