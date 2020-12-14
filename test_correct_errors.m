@@ -12,7 +12,9 @@ H1 = parity_check(G1);
 correct_errors(SE_map1, H1, rec)
 
 %%
-e2 = [0 1 1 1 1 1 0 0 1 0 0 0];
+e2 = [0 1 1 1 1 1 0 0 1 0 0 0;
+      0 0 0 0 1 0 1 0 0 0 0 0;
+      0 0 0 0 1 0 0 0 0 1 0 0];
 c2(5,:)
 rec2 = galois2_add(c2(5,:), e2)
 H2 = parity_check(G2);
